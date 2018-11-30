@@ -62,11 +62,11 @@ extern "C"
  */
 
 // Profile Parameters
-#define SIMPLEPROFILE_CHAR1                   0  // RW uint8 - Profile Characteristic 1 value
-#define SIMPLEPROFILE_CHAR2                   1  // RW uint8 - Profile Characteristic 2 value
-#define SIMPLEPROFILE_CHAR3                   2  // RW uint8 - Profile Characteristic 3 value
-#define SIMPLEPROFILE_CHAR4                   3  // RW uint8 - Profile Characteristic 4 value
-#define SIMPLEPROFILE_CHAR5                   4  // RW uint8 - Profile Characteristic 4 value
+//#define SIMPLEPROFILE_CHAR1                   0  // RW uint8 - Profile Characteristic 1 value
+//#define SIMPLEPROFILE_CHAR2                   1  // RW uint8 - Profile Characteristic 2 value
+//#define SIMPLEPROFILE_CHAR3                   2  // RW uint8 - Profile Characteristic 3 value
+//#define SIMPLEPROFILE_CHAR4                   3  // RW uint8 - Profile Characteristic 4 value
+//#define SIMPLEPROFILE_CHAR5                   4  // RW uint8 - Profile Characteristic 4 value
 
 #define SIMPLEPROFILE_CHAR6                   6  // RW uint8 - Profile Characteristic 6 value
 #define SIMPLEPROFILE_CHAR7                   7  // RW uint8 - Profile Characteristic 7 value
@@ -78,17 +78,17 @@ extern "C"
 #define SIMPLEPROFILE_SERV_UUID               0xFFF0
 
 // Key Pressed UUID
-#define SIMPLEPROFILE_CHAR1_UUID            0xFFF1
-#define SIMPLEPROFILE_CHAR2_UUID            0xFFF2
-#define SIMPLEPROFILE_CHAR3_UUID            0xFFF3
-#define SIMPLEPROFILE_CHAR4_UUID            0xFFF4
-#define SIMPLEPROFILE_CHAR5_UUID            0xFFF5
+//#define SIMPLEPROFILE_CHAR1_UUID            0xFFF1
+//#define SIMPLEPROFILE_CHAR2_UUID            0xFFF2
+//#define SIMPLEPROFILE_CHAR3_UUID            0xFFF3
+//#define SIMPLEPROFILE_CHAR4_UUID            0xFFF4
+//#define SIMPLEPROFILE_CHAR5_UUID            0xFFF5
 
-#define SIMPLEPROFILE_CHAR6_UUID            0xFFF6
-#define SIMPLEPROFILE_CHAR7_UUID            0xFFF7
-#define SIMPLEPROFILE_CHAR8_UUID            0xFFF8
-#define SIMPLEPROFILE_CHAR9_UUID            0xFFF9
-#define SIMPLEPROFILE_CHAR10_UUID            0xFFFA
+#define SIMPLEPROFILE_CHAR6_UUID            0xFFF1
+#define SIMPLEPROFILE_CHAR7_UUID            0xFFF2
+#define SIMPLEPROFILE_CHAR8_UUID            0xFFF3
+#define SIMPLEPROFILE_CHAR9_UUID            0xFFF4
+#define SIMPLEPROFILE_CHAR10_UUID            0xFFF5
 
 // Simple Keys Profile Services bit fields
 #define SIMPLEPROFILE_SERVICE               0x00000001
@@ -97,13 +97,13 @@ extern "C"
 #define SIMPLEPROFILE_CHAR5_LEN           5
 
 // Length of info Characteristic in bytes
-#define DKSERVER_INFO_LEN           128
+#define SIMPLEPROFILE_INFO_LEN           128
 // Length of auth Characteristic in bytes
-#define DKSERVER_AUTH_LEN           128
+#define SIMPLEPROFILE_AUTH_LEN           128
 //Length of session Characteristic in bytes
-#define DKSERVER_SESSION_LEN        128
+#define SIMPLEPROFILE_SESSION_LEN        128
 //Length of cmd Characteristic in bytes
-#define DKSERVER_CMD_LEN            20
+#define SIMPLEPROFILE_CMD_LEN            20
 
 /*********************************************************************
  * TYPEDEFS
