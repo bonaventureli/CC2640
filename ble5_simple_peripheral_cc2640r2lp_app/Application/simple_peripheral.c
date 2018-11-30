@@ -341,9 +341,9 @@ static uint8_t scanRspData[] =
   // complete name
   17,   // length of this data
   GAP_ADTYPE_LOCAL_NAME_COMPLETE,
-  'S',
-  'i',
-  'm',
+  'L',
+  'A',
+  'M',
   'p',
   'l',
   'e',
@@ -629,6 +629,10 @@ static void SimplePeripheral_init(void)
     uint8_t charValue3 = 3;
     uint8_t charValue4 = 4;
     uint8_t charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
+	uint8_t charValue6 = 6;
+	uint8_t charValue7 = 7;
+	uint8_t charValue8 = 8;
+	uint8_t charValue9 = 9;
 
     SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, sizeof(uint8_t),
                                &charValue1);
@@ -640,6 +644,14 @@ static void SimplePeripheral_init(void)
                                &charValue4);
     SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN,
                                charValue5);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, sizeof(uint8_t),
+                               &charValue6);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR7, sizeof(uint8_t),
+                               &charValue7);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR8, sizeof(uint8_t),
+                               &charValue8);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR9, sizeof(uint8_t),
+                               &charValue9);							   
   }
 
   // Register callback with SimpleGATTprofile
