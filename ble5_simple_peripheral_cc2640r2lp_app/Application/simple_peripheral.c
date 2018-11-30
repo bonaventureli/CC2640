@@ -624,34 +624,39 @@ static void SimplePeripheral_init(void)
   // For more information, see the GATT and GATTServApp sections in the User's Guide:
   // http://software-dl.ti.com/lprf/ble5stack-latest/
   {
-    uint8_t charValue1 = 1;
-    uint8_t charValue2 = 2;
-    uint8_t charValue3 = 3;
-    uint8_t charValue4 = 4;
-    uint8_t charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
-	uint8_t charValue6 = 6;
-	uint8_t charValue7 = 7;
-	uint8_t charValue8 = 8;
-	uint8_t charValue9 = 9;
+//    uint8_t charValue1 = 1;
+//    uint8_t charValue2 = 2;
+//    uint8_t charValue3 = 3;
+//    uint8_t charValue4 = 4;
+//    uint8_t charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
+    uint8_t charValueStatus = 0;
+    uint8_t charValueInfo[SIMPLEPROFILE_INFO_LEN] = {0};
+    uint8_t charValueAuth[SIMPLEPROFILE_AUTH_LEN] = {0};
+    uint8_t charValueSession[SIMPLEPROFILE_SESSION_LEN] = {0};
+    uint8_t charValueCmd[SIMPLEPROFILE_CMD_LEN] = {0};
 
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, sizeof(uint8_t),
-                               &charValue1);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8_t),
-                               &charValue2);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR3, sizeof(uint8_t),
-                               &charValue3);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8_t),
-                               &charValue4);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN,
-                               charValue5);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, sizeof(uint8_t),
-                               &charValue6);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR7, sizeof(uint8_t),
-                               &charValue7);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR8, sizeof(uint8_t),
-                               &charValue8);
-    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR9, sizeof(uint8_t),
-                               &charValue9);							   
+
+//    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, sizeof(uint8_t),
+//                               &charValue1);
+//    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8_t),
+//                               &charValue2);
+//    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR3, sizeof(uint8_t),
+//                               &charValue3);
+//    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8_t),
+//                               &charValue4);
+//    SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN,
+//                               charValue5);
+
+    SimpleProfile_SetParameter(SIMPLEPROFILE_STATUS, sizeof(uint8_t),
+                               &charValueStatus);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_INFO, SIMPLEPROFILE_INFO_LEN,
+                               charValueInfo);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_AUTH, SIMPLEPROFILE_AUTH_LEN,
+                               charValueAuth);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_SESSION, SIMPLEPROFILE_SESSION_LEN,
+                               charValueSession);
+    SimpleProfile_SetParameter(SIMPLEPROFILE_CMD, SIMPLEPROFILE_CMD_LEN,
+                               charValueCmd);
   }
 
   // Register callback with SimpleGATTprofile
@@ -1362,14 +1367,42 @@ static void SimplePeripheral_processCharValueChangeEvt(uint8_t paramId)
 
   switch(paramId)
   {
-    case SIMPLEPROFILE_CHAR1:
-      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, &newValue);
+//    case SIMPLEPROFILE_CHAR1:
+//      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, &newValue);
+//
+//      Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 1: %d", (uint16_t)newValue);
+//      break;
+//
+//    case SIMPLEPROFILE_CHAR3:
+//      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &newValue);
+//
+//      Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 3: %d", (uint16_t)newValue);
+//      break;
+
+    case SIMPLEPROFILE_STATUS:
+      SimpleProfile_GetParameter(SIMPLEPROFILE_STATUS, &newValue);
 
       Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 1: %d", (uint16_t)newValue);
       break;
 
-    case SIMPLEPROFILE_CHAR3:
-      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &newValue);
+    case SIMPLEPROFILE_INFO:
+      SimpleProfile_GetParameter(SIMPLEPROFILE_INFO, &newValue);
+
+      Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 3: %d", (uint16_t)newValue);
+      break;
+    case SIMPLEPROFILE_AUTH:
+      SimpleProfile_GetParameter(SIMPLEPROFILE_AUTH, &newValue);
+
+      Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 1: %d", (uint16_t)newValue);
+      break;
+
+    case SIMPLEPROFILE_SESSION:
+      SimpleProfile_GetParameter(SIMPLEPROFILE_SESSION, &newValue);
+
+      Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 3: %d", (uint16_t)newValue);
+      break;
+    case SIMPLEPROFILE_CMD:
+      SimpleProfile_GetParameter(SIMPLEPROFILE_SESSION, &newValue);
 
       Display_printf(dispHandle, SP_ROW_STATUS_1, 0, "Char 3: %d", (uint16_t)newValue);
       break;
